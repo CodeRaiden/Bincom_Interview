@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>All Polling Unit Result</h1>
+<strong>Polling Unit: {{ all.0.polling_unit_name }}</strong><br />
+<br />
+{% for item in all %}
+<p>Party: {{ item.party_abbreviation }} - Score: {{ item.party_score }}</p>
+{% endfor %}
+<br />
+
+<br />
+<br />
+<hr />
+{% endblock %}

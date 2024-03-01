@@ -1,0 +1,61 @@
+{% extends 'base.html'%} {% block content %}
+<h1>Add Party</h1>
+<br />
+<br />
+
+<!-- including a post method to submit the form to the action url 'join' in the application backend where we can then manipulate the information in order to store it in the database -->
+<form method="POST" action="{% url 'addparty' %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="emailHelp"
+      placeholder="Polling Unique ID"
+      name="polling_unit_uniqueid"
+      value="{{ polling_unit_uniqueid }}"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="emailHelp"
+      placeholder="Party Abbreviation"
+      name="party_abbreviation"
+      value="{{ party_abbreviation }}"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="emailHelp"
+      placeholder="Party Score"
+      name="party_score"
+      value="{{ party_score }}"
+    />
+  </div>
+  <div class="mb-3">
+    <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="emailHelp"
+      placeholder="Polling Unit Name"
+      name="polling_unit_name"
+      value="{{ polling_unit_name }}"
+    />
+  </div>
+  <br />
+  <!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> -->
+  <!-- change the color from blue 'btn btn-primary' to grey 'btn btn-secondary' -->
+  <button type="submit" class="btn btn-secondary">Add Entry</button>
+</form>
+{% endblock %}

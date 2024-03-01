@@ -1,0 +1,16 @@
+{% extends 'base.html'%} {% block content %}
+<center>
+  <h1>Display Summed Total Of All Polling Unit Under Any Particlar LGA</h1>
+  <form method="POST" action="{% url 'summed' %}">
+    {% csrf_token %}
+    <select name="polling_unit_name">
+      <option selected disabled="true">Polling Unit Name</option>
+      {% for item in allPolls %}
+      <option>{{item.polling_unit_name}}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="insert" />
+  </form>
+</center>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html'%} {% block content %}
+<center>
+  <h1>Summed Total Result Of All Polling Unit Under {{ puname }} {{ puId }}</h1>
+  <br />
+  {% for item in pu %} {{ item.party_abbreviation }} - {{ item.party_score }}
+  <br />
+  {% endfor %} sumtotal - {{ summedTotal }}
+</center>
+{% endblock %}

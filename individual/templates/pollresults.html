@@ -1,0 +1,29 @@
+{% extends 'base.html'%} {% block content %}
+<h1>Polling Results</h1>
+<p>Input the polling unit unique id</p>
+<br />
+<br />
+
+<!-- including a post method to submit the form to the action url 'join' in the application backend where we can then manipulate the information in order to store it in the database -->
+<form method="POST" action="{% url 'pollresults' %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+    <input
+      type="text"
+      class="form-control"
+      aria-describedby="emailHelp"
+      placeholder="Polling Unique ID"
+      name="polling_unit_uniqueid"
+      value="{{ puuid }}"
+    />
+  </div>
+  <br />
+  <!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> -->
+  <!-- change the color from blue 'btn btn-primary' to grey 'btn btn-secondary' -->
+  <button type="submit" class="btn btn-secondary">Get Results</button>
+</form>
+{% endblock %}

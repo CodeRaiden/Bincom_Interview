@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Result of Individual Polling Unit</h1>
+<br />
+
+{% for item in pu %}
+<strong>{{ item }}</strong><br />
+Result: {{item.party_score}}
+<br />
+<br />
+<hr />
+{% endfor %} {% endblock %}
